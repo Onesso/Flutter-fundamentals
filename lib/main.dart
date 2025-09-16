@@ -17,6 +17,8 @@ void main() {
 }
 
 class GradientContainer extends StatelessWidget {
+  const GradientContainer({super.key}); //this constructor is used to initialize the widget.
+
   @override
   Widget build(context) {
     return SafeArea(

@@ -9,4 +9,11 @@ Thefore to create a custome width, we will have to follow the same principle, i.
 we must have our custome class that will be instantiated to form the objest which will be the widget.
 
 
-the wording/thing before my function name is the return value type of the function. 
+the wording/thing before my function name is the return value type of the function.
+
+
+Classes that extendes statelesswidget must have a constructor function.
+
+So how do you create a constructor function? you declare it using the class name.
+
+the constructor must pass a key to the parent of what the class is extending and in our case the parent of statelesswidget.
