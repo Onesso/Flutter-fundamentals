@@ -1,0 +1,9 @@
+To create reusable components we start to use class.
+
+In flutter every widgets and objects. This means that they have their class.
+
+Therefore every width has their class they are instantiation of classes.
+
+Thefore to create a custome width, we will have to follow the same principle, i.e.
+
+we must have our custome class that will be instantiated to form the objest which will be the widget.
