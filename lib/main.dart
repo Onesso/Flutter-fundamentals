@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:roll_dice/gradient_container.dart';
 
 void main() {
+  Color primaryColor = Color(0xFF191414);
+  Color secondaryColor = Color.fromARGB(255, 3, 37, 15);
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -11,7 +13,7 @@ void main() {
           backgroundColor: Colors.black,
           toolbarHeight: 1.0,
         ),
-        body: GradientContainer(),
+        body: GradientContainer(primaryColor, secondaryColor),
       ),
     ),
   );
