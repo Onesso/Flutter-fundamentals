@@ -1,3 +1,11 @@
+adb kill-server
+adb start-server
+
+
+
+
+
+
 To create reusable components we start to use class.
 
 In flutter every widgets and objects. This means that they have their class.
