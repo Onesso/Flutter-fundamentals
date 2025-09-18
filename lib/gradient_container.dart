@@ -14,6 +14,10 @@ class GradientContainer extends StatelessWidget {
 
   @override
   Widget build(context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    final double imageWidth = screenWidth * 0.75;
+
     return SafeArea(
       bottom: false,
       child: Container(
@@ -26,7 +30,17 @@ class GradientContainer extends StatelessWidget {
         ),
 
         child: Center(
-          child: Image.asset("assests/images/dice-1.png"),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assests/images/dice-1.png",
+                width: imageWidth,
+              ),
+              StyledText("roll the dice"),
+            ],
+          ),
         ),
       ),
     );
