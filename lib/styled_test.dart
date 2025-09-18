@@ -8,14 +8,17 @@ class StyledText extends StatelessWidget {
 
   final String text;
 
+  // var activeDice = "assests/images/dice-1.png";
+
+  void rollDiceFunction() {
+    logger.d("button clicked");
+  }
+
   @override
   Widget build(context) {
     return Center(
       child: TextButton(
-        onPressed: () {
-          logger.d("button clicked");
-        },
-
+        onPressed: rollDiceFunction,
         style: TextButton.styleFrom(
           foregroundColor: Colors.white, // Text color
           backgroundColor: Colors.blue, // Button background color
@@ -23,19 +26,12 @@ class StyledText extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(19),
           ),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
+          textStyle: TextStyle(
             fontSize: 18,
           ),
         ),
+        child: Text(text),
       ),
     );
   }
-
-  // void callFuntion() {
-  //   logger.d("button clicked");
-  // }
 }

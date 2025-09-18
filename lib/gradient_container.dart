@@ -18,6 +18,8 @@ class GradientContainer extends StatelessWidget {
 
     final double imageWidth = screenWidth * 0.75;
 
+    var activeDice = "assests/images/dice-1.png";
+
     return SafeArea(
       bottom: false,
       child: Container(
@@ -35,10 +37,10 @@ class GradientContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "assests/images/dice-1.png",
+                activeDice,
                 width: imageWidth,
               ),
-              StyledText("roll the dice"),
+              StyledText("Roll the dice"),
             ],
           ),
         ),
