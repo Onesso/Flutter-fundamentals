@@ -5,15 +5,12 @@ Alignment topLeft = Alignment.topLeft;
 Alignment bottomRight = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer(
-    this.primaryColor,
-    this.secondaryColor, {
+  const GradientContainer({
     super.key,
+    required this.colors,
   }); //this constructor is used to initialize the widget.
 
-  final Color primaryColor;
-
-  final Color secondaryColor;
+  final List<Color> colors;
 
   @override
   Widget build(context) {
@@ -24,7 +21,7 @@ class GradientContainer extends StatelessWidget {
           gradient: LinearGradient(
             begin: topLeft,
             end: bottomRight,
-            colors: [primaryColor, secondaryColor],
+            colors: colors,
           ),
         ),
         child: StyledText("hello world"),
