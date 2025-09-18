@@ -4,21 +4,17 @@ import 'package:logger/logger.dart';
 final Logger logger = Logger();
 
 class StyledText extends StatelessWidget {
-  const StyledText(this.text, {super.key});
+  const StyledText(this.text, {super.key, required this.onPressed});
 
   final String text;
 
-  // var activeDice = "assests/images/dice-1.png";
-
-  void rollDiceFunction() {
-    logger.d("button clicked");
-  }
+  final VoidCallback onPressed;
 
   @override
   Widget build(context) {
     return Center(
       child: TextButton(
-        onPressed: rollDiceFunction,
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           foregroundColor: Colors.white, // Text color
           backgroundColor: Colors.blue, // Button background color

@@ -4,21 +4,34 @@ import 'package:roll_dice/styled_test.dart';
 Alignment topLeft = Alignment.topLeft;
 Alignment bottomRight = Alignment.bottomRight;
 
-class GradientContainer extends StatelessWidget {
+class GradientContainer extends StatefulWidget {
   const GradientContainer({
     super.key,
     required this.colors,
-  }); //this constructor is used to initialize the widget.
+  });
 
   final List<Color> colors;
+  @override
+  State<GradientContainer> createState() {
+    return _GradientContainerState();
+  }
+}
+
+class _GradientContainerState extends State<GradientContainer> {
+  var activeDice = "assests/images/dice-1.png";
+
+  void rollDiceFunction() {
+    logger.d("button clicked");
+    setState(() {
+      activeDice = "assests/images/dice-4.png"; // Correctly change the state
+    });
+  }
 
   @override
   Widget build(context) {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     final double imageWidth = screenWidth * 0.75;
-
-    var activeDice = "assests/images/dice-1.png";
 
     return SafeArea(
       bottom: false,
@@ -27,7 +40,7 @@ class GradientContainer extends StatelessWidget {
           gradient: LinearGradient(
             begin: topLeft,
             end: bottomRight,
-            colors: colors,
+            colors: widget.colors,
           ),
         ),
 
@@ -40,7 +53,10 @@ class GradientContainer extends StatelessWidget {
                 activeDice,
                 width: imageWidth,
               ),
-              StyledText("Roll the dice"),
+              StyledText(
+                "Roll",
+                onPressed: rollDiceFunction,
+              ),
             ],
           ),
         ),
