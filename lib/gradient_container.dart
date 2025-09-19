@@ -20,22 +20,21 @@ class GradientContainer extends StatefulWidget {
 }
 
 class _GradientContainerState extends State<GradientContainer> {
+  final randomizer = Random();
   var activeDice = "assests/images/dice-1.png";
   var currentDiceRoll = 2;
 
   void _vibrateLightly() {
-    HapticFeedback.mediumImpact();
+    HapticFeedback.lightImpact();
   }
 
   void rollDiceFunction() {
-    logger.d("button clicked");
-
     _vibrateLightly();
 
     int newDiceRoll;
 
     do {
-      newDiceRoll = Random().nextInt(6) + 1;
+      newDiceRoll = randomizer.nextInt(6) + 1;
     } while (newDiceRoll == currentDiceRoll);
 
     setState(() {
@@ -70,13 +69,11 @@ class _GradientContainerState extends State<GradientContainer> {
               AnimatedSwitcher(
                 duration: const Duration(milliseconds: 500),
                 transitionBuilder: (Widget child, Animation<double> animation) {
-                  // Rotation animation
                   final rotation = Tween<double>(
                     begin: 0.0,
                     end: 1.0,
                   ).animate(animation);
 
-                  // Scaling animation
                   final scale = Tween<double>(begin: 0.5, end: 1.0).animate(
                     CurvedAnimation(
                       parent: animation,
