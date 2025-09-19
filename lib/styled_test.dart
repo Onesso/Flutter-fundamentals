@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
+
 final Logger logger = Logger();
 
 class StyledText extends StatelessWidget {
@@ -16,7 +17,8 @@ class StyledText extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          foregroundColor: Colors.white, // Text color
+          minimumSize: Size(150, 50),
+          foregroundColor: Colors.white, // Text colors
           backgroundColor: Colors.blue, // Button background color
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           shape: RoundedRectangleBorder(
